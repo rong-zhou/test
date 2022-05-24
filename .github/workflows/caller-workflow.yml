@@ -10,14 +10,10 @@ on:
         required: false
         description: open or not
         default: 'false'
-      age:
-        required: false
-        description: age range
-        default: '123'
 jobs:
   login:
     uses: ./.github/workflows/reusable-workflow-1.yml
     with:
       username: ${{ github.event.inputs.username }}
       open: ${{ github.event.inputs.open }}
-      age: ${{ github.event.inputs.age }}
+      age: '123'
