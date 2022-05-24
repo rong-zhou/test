@@ -5,15 +5,15 @@ on:
       username:
         required: true
         type: number
-        default: '1'
+        default: 1
       open:
         required: true
         type: boolean
-        default: 'true'
+        default: true
       age:
         required: true
-        type: number
-        default: 1
+        type: string
+        default: '1'
 jobs:
   welcome:
     runs-on: ubuntu-latest
