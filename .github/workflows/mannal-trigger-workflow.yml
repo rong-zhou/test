@@ -1,0 +1,12 @@
+name: Caller workflow
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        required: true
+        description: name of user
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "welcome ${{ inputs.username }}"
