@@ -4,7 +4,7 @@ on:
     inputs:
       username:
         required: true
-        type: string
+        type: number
         default: '1'
       open:
         required: true
