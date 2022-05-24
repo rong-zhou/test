@@ -7,7 +7,7 @@ on:
         type: string
 jobs:
   login:
-    uses: ./.github/workflows/reusable-workflow-1.yml@main
+    uses: ./.github/workflows/reusable-workflow-1.yml
     with:
       username: ${{inputs.username}}
 
