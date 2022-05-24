@@ -5,7 +5,7 @@ on:
       username:
         required: true
         type: number
-        default: '1'
+        default: 1
       open:
         required: true
         type: string
