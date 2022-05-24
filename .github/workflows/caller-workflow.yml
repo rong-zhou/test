@@ -4,10 +4,9 @@ on:
     inputs:
       username:
         required: true
+        description: name of user
         type: string
 jobs:
   login:
     uses: ./.github/workflows/reusable-workflow-1.yml
-    with:
-      username: ${{inputs.username}}
 
