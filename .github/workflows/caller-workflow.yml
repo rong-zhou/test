@@ -5,10 +5,15 @@ on:
       username:
         required: true
         description: name of user
+        default: test
+      open:
+        required: true
+        description: open or not
+        default: 'false'
 jobs:
   login:
     uses: ./.github/workflows/reusable-workflow-1.yml
     with:
       username: ${{ github.event.inputs.username }}
-      open: true
+      open: ${{ github.event.inputs.open }}
       age: 123
