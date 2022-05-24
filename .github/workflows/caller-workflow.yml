@@ -10,3 +10,5 @@ jobs:
     uses: ./.github/workflows/reusable-workflow-1.yml
     with:
       username: ${{ github.event.inputs.username }}
+      open: true
+      age: 123

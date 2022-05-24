@@ -4,16 +4,16 @@ on:
     inputs:
       username:
         required: true
-        type: number
-        default: 1
+        type: string
+        default: 'string'
       open:
         required: true
         type: boolean
         default: true
       age:
         required: true
-        type: string
-        default: '1'
+        type: number
+        default: 1
 jobs:
   welcome:
     runs-on: ubuntu-latest
