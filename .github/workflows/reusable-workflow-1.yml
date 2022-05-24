@@ -8,8 +8,8 @@ on:
         default: 1
       open:
         required: true
-        type: string
-        default: 'true'
+        type: boolean
+        default: true
       age:
         required: true
         type: string
