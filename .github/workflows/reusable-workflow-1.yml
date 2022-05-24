@@ -9,4 +9,4 @@ jobs:
   welcome:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "welcome ${{inputs.username}}"
+      - run: echo "welcome ${{ inputs.username }}"
