@@ -1,0 +1,13 @@
+name: Caller workflow
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        required: true
+        type: string
+jobs:
+  login:
+    uses: ./github/workflows/reusable-workflow-1.yml
+    with:
+      username: ${{inputs.username}}
+
