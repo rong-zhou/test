@@ -1,26 +1,5 @@
 name: Reusable workflow 1
 on:
-  workflow_dispatch:
-    inputs:
-      username:
-        required: true
-        description: user name
-        type: string
-        default: 'string'
-      open:
-        required: true
-        type: string
-        default: 'true'
-        description: open
-      age:
-        required: true
-        type: string
-        default: '1'
-        description: age
-      seconds:
-        required: true
-        type: string
-        description: seconds
   workflow_call:
     inputs:
       username:
