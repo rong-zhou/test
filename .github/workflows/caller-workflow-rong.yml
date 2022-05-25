@@ -21,7 +21,8 @@ jobs:
     - name: translate minutes to seconds
       env:
         MINUTES: ${{ github.event.inputs.minutes}}
-      run: ::set-env name=SECONDS::$((MINUTES*60))
+      run: |
+        echo ::set-env name=SECONDS::$(($MINUTES*60))
     - name: run resuable workflow
       uses: ./.github/workflows/reusable-workflow-1.yml
       with:
