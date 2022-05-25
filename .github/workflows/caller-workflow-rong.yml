@@ -1,0 +1,31 @@
+name: Caller workflow
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        required: true
+        description: name of user
+        default: test
+      open:
+        required: false
+        description: open or not
+        default: 'false'
+      minutes:
+        required: false
+        description: minute
+        default: '1'
+jobs:
+  login:
+    runs-on: ubuntu-latest
+    steps:
+    - name: translate minutes to seconds
+      env:
+        MINUTES: ${{ github.event.inputs.minutes}}
+      run: ::set-env name=SECONDS::$((MINUTES*60))
+    - name: run resuable workflow
+      uses: ./.github/workflows/reusable-workflow-1.yml
+      with:
+        username: ${{ github.event.inputs.username }}
+        open: ${{ github.event.inputs.open }}
+        age: '123'
+        seconds: $SECONDS
