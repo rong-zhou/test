@@ -23,6 +23,7 @@ jobs:
         MINUTES: ${{ github.event.inputs.minutes }}
       run: |
         export SECONDS=$(($MINUTES*60))
+        echo $SECONDS
     - name: run resuable workflow
       uses: ./.github/workflows/reusable-workflow-1.yml
       with:
