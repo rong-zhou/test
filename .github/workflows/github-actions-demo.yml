@@ -18,4 +18,4 @@ jobs:
       - name: Print Secrets
         env:
           token: ${{ secrets.OUR_CITY }}
-        run: echo "secrets - ${{ token }}"
+        run: echo $token
