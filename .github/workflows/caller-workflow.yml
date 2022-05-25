@@ -10,6 +10,10 @@ on:
         required: false
         description: open or not
         default: 'false'
+      minutes:
+        required: false
+        description: minute
+        default: '1'
 jobs:
   login:
     uses: ./.github/workflows/reusable-workflow-1.yml
@@ -17,3 +21,4 @@ jobs:
       username: ${{ github.event.inputs.username }}
       open: ${{ github.event.inputs.open }}
       age: '123'
+      seconds: ${{ github.event.inputs.minutes}} * 60

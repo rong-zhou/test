@@ -14,8 +14,13 @@ on:
         required: true
         type: string
         default: '1'
+      seconds:
+        required: true
+        type: number
+        default: '1'
 jobs:
   welcome:
     runs-on: ubuntu-latest
     steps:
       - run: echo "welcome ${{ inputs.username }}"
+      - run: echo "second is ${{ seconds}}"
