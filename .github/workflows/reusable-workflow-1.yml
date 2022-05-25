@@ -16,7 +16,7 @@ on:
         default: '1'
       seconds:
         required: true
-        type: number
+        type: string
     secrets:
       token:
         description: test token
