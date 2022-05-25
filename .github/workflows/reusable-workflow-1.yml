@@ -18,8 +18,7 @@ on:
         required: true
         type: string
     secrets:
-      token:
-        description: test token
+      token: {{ 'hello world' }}
         required: true
 jobs:
   welcome:
