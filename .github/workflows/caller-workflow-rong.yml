@@ -2,17 +2,9 @@ name: Caller Workflow Rong
 on:
   workflow_dispatch:
     inputs:
-      username:
-        required: true
-        description: name of user
-        default: test
-      open:
-        required: false
-        description: open or not
-        default: 'false'
       minutes:
-        required: false
-        description: minute
+        required: true
+        description: minutes
         default: '1'
 jobs:
   translate:
@@ -27,10 +19,12 @@ jobs:
         echo $SECONDS
   run:
     name: run reusable workflow
-    uses: ./.github/workflows/reusable-workflow-1.yml
+    uses: ./.github/workflows/parallel.yml
     with:
-      username: ${{ github.event.inputs.username }}
-      open: ${{ github.event.inputs.open }}
-      age: '123'
-      seconds: $SECONDS
+      minutes: ${{github.event.inputs.minutes}}
+  print:
+    name: print env
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo $SECONDS
     needs: [translate]
