@@ -19,7 +19,6 @@ on:
         type: string
     secrets:
       token: ${{ inputs.username }}
-        required: true
 jobs:
   welcome:
     runs-on: ubuntu-latest
