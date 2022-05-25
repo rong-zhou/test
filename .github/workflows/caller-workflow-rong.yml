@@ -3,27 +3,27 @@ on:
   workflow_dispatch:
     inputs:
       minutes:
-        required: false
+        required: true
         description: minutes
 jobs:
-  translate:
-    name: translate minutes to seconds
-    runs-on: ubuntu-latest
-    steps:
-    - name: translate minutes to seconds
-      env:
-        MINUTES: ${{ github.event.inputs.minutes }}
-      run: |
-        export SECONDS=$(($MINUTES*60))
-        echo $SECONDS
-  run:
+#  translate:
+#    name: translate minutes to seconds
+#    runs-on: ubuntu-latest
+#    steps:
+#    - name: translate minutes to seconds
+#      env:
+#        MINUTES: ${{ github.event.inputs.minutes }}
+#      run: |
+#        export SECONDS=$(($MINUTES*60))
+#        echo $SECONDS
+  execute:
     name: run reusable workflow
     uses: ./.github/workflows/parallel-workflow.yml
     with:
       minutes: 30
-  print:
-    name: print env
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo $SECONDS
-    needs: [translate]
+#  print:
+#    name: print env
+#    runs-on: ubuntu-latest
+#    steps:
+#      - run: echo $SECONDS
+#    needs: [translate]
