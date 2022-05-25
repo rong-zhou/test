@@ -20,6 +20,5 @@ jobs:
     with:
       username: ${{ github.event.inputs.username }}
       open: ${{ github.event.inputs.open }}
-      age: '123'
+      age: 123
       seconds: 100
-    secrets: inherit
