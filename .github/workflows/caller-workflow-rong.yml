@@ -20,7 +20,7 @@ jobs:
     name: run reusable workflow
     uses: ./.github/workflows/parallel-workflow.yml
     with:
-      minutes: ${{github.event.inputs.minutes}}
+      minutes: 30
   print:
     name: print env
     runs-on: ubuntu-latest
