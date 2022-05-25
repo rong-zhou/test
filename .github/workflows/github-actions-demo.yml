@@ -15,4 +15,7 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - run: echo "secrets - ${{ secrets.OUR_CITY }}"
+      - name: Print Secrets
+        with:
+          token: ${{ secrets.OUR_CITY }}
+        run: echo "secrets - ${{ token }}"
