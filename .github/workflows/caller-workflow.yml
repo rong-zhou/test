@@ -22,3 +22,4 @@ jobs:
       open: ${{ github.event.inputs.open }}
       age: 123
       seconds: 100
+      numPoolAccounts: 123
