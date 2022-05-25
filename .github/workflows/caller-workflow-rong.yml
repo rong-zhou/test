@@ -3,9 +3,8 @@ on:
   workflow_dispatch:
     inputs:
       minutes:
-        required: true
+        required: false
         description: minutes
-        default: '1'
 jobs:
   translate:
     name: translate minutes to seconds
