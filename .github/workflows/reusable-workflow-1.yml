@@ -17,10 +17,14 @@ on:
       seconds:
         required: true
         type: number
+    secrets:
+      token:
+        description: test token
+        required: true
 jobs:
   welcome:
     runs-on: ubuntu-latest
     steps:
       - run: echo "welcome ${{ inputs.username }}"
       - run: echo "second is ${{ inputs.seconds }}"
-      - run: echo "token here you go ${{ secrets.token}}"
+      - run: echo "token here you go ${{ secrets.token }}"
