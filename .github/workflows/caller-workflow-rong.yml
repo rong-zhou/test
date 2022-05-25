@@ -19,7 +19,7 @@ jobs:
         echo $SECONDS
   run:
     name: run reusable workflow
-    uses: ./.github/workflows/parallel.yml
+    uses: ./.github/workflows/parallel-workflow.yml
     with:
       minutes: ${{github.event.inputs.minutes}}
   print:
