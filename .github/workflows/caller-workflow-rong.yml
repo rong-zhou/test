@@ -1,10 +1,10 @@
 name: Caller Workflow Rong
 on:
   workflow_dispatch:
-    inputs:
-      minutes:
-        required: true
-        description: minutes
+#    inputs:
+#      minutes:
+#        required: true
+#        description: minutes
 jobs:
 #  translate:
 #    name: translate minutes to seconds
