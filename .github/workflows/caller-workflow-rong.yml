@@ -20,7 +20,7 @@ jobs:
     steps:
     - name: translate minutes to seconds
       env:
-        MINUTES: ${{ github.event.inputs.minutes}}
+        MINUTES: ${{ github.event.inputs.minutes }}
       run: |
         echo ::set-env name=SECONDS::$(($MINUTES*60))
     - name: run resuable workflow
