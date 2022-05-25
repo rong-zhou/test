@@ -22,4 +22,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "welcome ${{ inputs.username }}"
-      - run: echo "second is ${{ seconds }}"
+      - run: echo "second is ${{ inputs.seconds }}"
