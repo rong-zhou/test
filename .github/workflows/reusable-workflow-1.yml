@@ -18,13 +18,13 @@ on:
         required: true
         type: string
       numPoolAccounts:
-        required: false
+        required: true
         type: string
         default: '1'
       numShadowAccounts:
-        required: false
+        required: true
         type: string
-        default: '123'
+        default: '0'
 
 jobs:
   welcome:
@@ -32,10 +32,9 @@ jobs:
     steps:
       - run: echo "welcome ${{ inputs.username }}"
       - run: echo "second is ${{ inputs.seconds }}"
-      - run: echo "${{ inputs.age }}"
       - run: echo "${{ inputs.numShadowAccounts }}"
       - run: echo "${{ inputs.age }}"
-      - run: echo "${{ inputs.numPoolAccounts }}"
+      - run: echo "${{ github.events.inputs.numPoolAccounts }}"
 
 
 
