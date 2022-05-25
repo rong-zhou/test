@@ -22,4 +22,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "welcome ${{ inputs.username }}"
+<<<<<<< Updated upstream
       - run: echo "second is ${{ inputs.seconds }}"
+=======
+      - run: echo "second is ${{ seconds }}"
+      - run: echo "token here you go ${{ secrets.token}}"
+
+>>>>>>> Stashed changes
