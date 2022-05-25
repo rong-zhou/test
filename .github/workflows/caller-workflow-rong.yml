@@ -15,7 +15,8 @@ on:
         description: minute
         default: '1'
 jobs:
-  login:
+  translate:
+    name: translate minutes to seconds
     runs-on: ubuntu-latest
     steps:
     - name: translate minutes to seconds
@@ -24,10 +25,12 @@ jobs:
       run: |
         export SECONDS=$(($MINUTES*60))
         echo $SECONDS
-    - name: run resuable workflow
-      uses: ./.github/workflows/reusable-workflow-1.yml
-      with:
-        username: ${{ github.event.inputs.username }}
-        open: ${{ github.event.inputs.open }}
-        age: '123'
-        seconds: $SECONDS
+  run:
+    name: run reusable workflow
+    uses: ./.github/workflows/reusable-workflow-1.yml
+    with:
+      username: ${{ github.event.inputs.username }}
+      open: ${{ github.event.inputs.open }}
+      age: '123'
+      seconds: $SECONDS
+    needs: [translate]
