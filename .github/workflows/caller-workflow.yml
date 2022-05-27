@@ -16,7 +16,7 @@ on:
         default: '1'
       enable:
         required: true
-        description: 'skip or not'
+        description: 'enable or not'
         default: 'false'
 jobs:
   login:
