@@ -20,7 +20,7 @@ on:
         default: 'false'
 jobs:
   login:
-    if: ${{ github.event.inputs.enable }}
+    if: ${{ github.event.inputs.enable == 'true' }}
     uses: ./.github/workflows/reusable-workflow-1.yml
     with:
       username: ${{ github.event.inputs.username }}
