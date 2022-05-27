@@ -14,8 +14,13 @@ on:
         required: false
         description: minute
         default: '1'
+      enable:
+        required: true
+        description: 'skip or not'
+        default: 'false'
 jobs:
   login:
+    if: ${{ github.event.inputs.enable }}
     uses: ./.github/workflows/reusable-workflow-1.yml
     with:
       username: ${{ github.event.inputs.username }}
