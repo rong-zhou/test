@@ -30,6 +30,7 @@ jobs:
       numPoolAccounts: 321
       numShadowAccounts: 123
   job1:
+    if: always()
     runs-on: ubuntu-latest
     needs: [login]
     steps:
