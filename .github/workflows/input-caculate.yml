@@ -16,5 +16,6 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      run: |
-        printf "\n\n Input parameters, number from ${{ inputs.startPhoneNumber }} to $(( ${{inputs.startPhoneNumber }} + ${{ inputs.phoneNumberRange }} ))"
+      - name : print
+        run: |
+          printf "\n\n Input parameters, number from ${{ inputs.startPhoneNumber }} to $(( ${{inputs.startPhoneNumber }} + ${{ inputs.phoneNumberRange }} ))"
