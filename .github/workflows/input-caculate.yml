@@ -1,6 +1,6 @@
 name: try input
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       startNumber:
         description: 'startNumber'
