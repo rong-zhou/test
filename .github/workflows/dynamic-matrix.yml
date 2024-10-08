@@ -6,15 +6,15 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      colors: ${{ steps.colors.outputs.colors }}
+      colors: ${{ steps.colors.outputs.matrix.colors }}
 
     steps:
       - uses: actions/checkout@v4
 
       - name: Define Colors
         id: colors
-        run: |
-          script/generate_color.sh
+        run: script/generate_color.sh
+
       - name: Debug GITHUB_OUTPUT
         run: cat $GITHUB_OUTPUT
 
