@@ -13,7 +13,7 @@ jobs:
       - name: Define Colors
         id: colors
         run: |
-          script/generate_color.sh >> "$GITHUB_OUTPUT"
+          script/generate_color.sh
 
   produce-atrifacts:
     runs-on: ubuntu-latest

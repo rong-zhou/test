@@ -2,4 +2,6 @@
 
 color=("red" "green" "blue")
 echo "generate colors"
-echo "${color[@]}"
+
+# shellcheck disable=SC2145
+echo "::set-output name=colors::${color[@]}"
