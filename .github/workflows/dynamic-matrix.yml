@@ -20,7 +20,7 @@ jobs:
     needs: define-matrix
     strategy:
       matrix:
-        color: ${{ needs.define-matrix.outputs.colors }}
+        color: ${{ fromJSON(needs.define-matrix.outputs.colors) }}
 
     steps:
       - name: Report Colors
