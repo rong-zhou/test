@@ -7,4 +7,4 @@ colors=("red" "green" "blue")
 colors_json=$(printf '%s\n' "${colors[@]}" | jq -R . | jq -s .)
 
 # Output the colors as a single string
-echo "$colors_json" >> "$GITHUB_OUTPUT"
+echo "colors=$colors_json" >> "$GITHUB_OUTPUT"
