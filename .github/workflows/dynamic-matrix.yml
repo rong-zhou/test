@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      colors: ${{ steps.colors.outputs.matrix.colors }}
+      matrix: ${{ steps.colors.outputs.matrix }}
 
     steps:
       - uses: actions/checkout@v4
@@ -23,7 +23,7 @@ jobs:
     needs: generate-colors
     strategy:
       matrix:
-        color: ${{ fromJSON(needs.generate-colors.outputs.colors) }}
+        color: ${{ fromJSON(needs.generate-colors.outputs.matrix.colors) }}
 
     steps:
       - name: Report Colors
