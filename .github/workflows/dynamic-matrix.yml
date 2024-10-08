@@ -2,7 +2,7 @@ name: dynamic-matrix
 on:
   workflow_dispatch:
 jobs:
-  generate_colors:
+  generate-colors:
     runs-on: ubuntu-latest
 
     outputs:
@@ -16,12 +16,12 @@ jobs:
         run: |
           script/generate_color.sh
 
-  use_colors:
+  use-colors:
     runs-on: ubuntu-latest
-    needs: define-matrix
+    needs: generate-colors
     strategy:
       matrix:
-        color: [${{ fromJSON(needs.generate_colors.outputs.colors) }}]
+        color: [${{ fromJSON(needs.generate-colors.outputs.colors) }}]
 
     steps:
       - name: Report Colors
