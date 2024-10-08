@@ -12,7 +12,7 @@ jobs:
       - name: Define Colors
         id: colors
         run: |
-          echo 'colors=["red", "green", "blue"]' >> "$GITHUB_OUTPUT"
+          script/generate_color.sh >> "$GITHUB_OUTPUT"
 
   produce-atrifacts:
     runs-on: ubuntu-latest
