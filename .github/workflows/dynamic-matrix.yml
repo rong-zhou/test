@@ -15,7 +15,7 @@ jobs:
       - name: Define Colors
         id: colors
         run: |
-          ./generate_colors.sh
+          script/generate_colors.sh
 
   use_colors:
     runs-on: ubuntu-latest
@@ -28,5 +28,3 @@ jobs:
       - name: Report Colors
         run: |
           printf "\n\n Matrix parameters: ${{ matrix.color }}"
-
-
