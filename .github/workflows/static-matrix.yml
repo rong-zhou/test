@@ -1,0 +1,14 @@
+name: static-matrix
+on: workflow_dispatch
+jobs:
+  Print-node-version:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ 10,12,14 ]
+        java: [ 7, 11, 17 ]
+    steps:
+      - name: print
+        run: |
+          printf "\n\n Matrix parameters: node version: ${{ matrix.node }} java version: ${{ matrix.java }}"
+
