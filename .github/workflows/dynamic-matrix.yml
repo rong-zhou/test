@@ -14,18 +14,18 @@ jobs:
         run: |
           ls
           pwd
-          script/generate_color.sh >> "$GITHUB_OUTPUT"
-
-  produce-atrifacts:
-    runs-on: ubuntu-latest
-    needs: define-matrix
-    strategy:
-      matrix:
-        color: ${{ fromJSON(needs.define-matrix.outputs.colors) }}
-
-    steps:
-      - name: Report Colors
-        run: |
-          printf "\n\n Matrix parameters: ${{ matrix.color }}"
-
-
+#          script/generate_color.sh >> "$GITHUB_OUTPUT"
+#
+#  produce-atrifacts:
+#    runs-on: ubuntu-latest
+#    needs: define-matrix
+#    strategy:
+#      matrix:
+#        color: ${{ fromJSON(needs.define-matrix.outputs.colors) }}
+#
+#    steps:
+#      - name: Report Colors
+#        run: |
+#          printf "\n\n Matrix parameters: ${{ matrix.color }}"
+#
+#
