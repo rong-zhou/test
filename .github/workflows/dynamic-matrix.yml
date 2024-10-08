@@ -12,6 +12,7 @@ jobs:
       - name: Define Colors
         id: colors
         run: |
+          ls
           pwd
           script/generate_color.sh >> "$GITHUB_OUTPUT"
 
