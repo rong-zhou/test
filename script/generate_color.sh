@@ -3,4 +3,5 @@
 color=("red" "green" "blue")
 echo "generate colors"
 
-echo "${color[@]}" >> "$GITHUB_OUTPUT"
+# shellcheck disable=SC2128
+echo "$color" >> "$GITHUB_OUTPUT"
