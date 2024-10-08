@@ -1,0 +1,29 @@
+name: dynamic-matrix
+on:
+  workflow_dispatch:
+jobs:
+  define-matrix:
+    runs-on: ubuntu-latest
+
+    outputs:
+      colors: ${{ steps.colors.outputs.colors }}
+
+    steps:
+      - name: Define Colors
+        id: colors
+        run: |
+          echo 'colors=["red", "green", "blue"]' >> "$GITHUB_OUTPUT"
+
+  produce-atrifacts:
+    runs-on: ubuntu-latest
+    needs: define-matrix
+    strategy:
+      matrix:
+        color: ${{ fromJSON(needs.define-matrix.outputs.colors) }}
+
+    steps:
+      - name: Report Colors
+        run: |
+          printf "\n\n Matrix parameters: ${{ matrix.colors }}"
+
+

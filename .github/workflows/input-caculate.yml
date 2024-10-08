@@ -1,21 +1,21 @@
-name: try input
-on:
-  workflow_dispatch:
-    inputs:
-      startNumber:
-        description: 'startNumber'
-        required: true
-        type: string
-        default: '0'
-      range:
-        description: 'startNumber'
-        required: true
-        type: string
-        default: '0'
-jobs:
-  Explore-GitHub-Actions:
-    runs-on: ubuntu-latest
-    steps:
-      - name : print
-        run: |
-          printf "\n\n Input parameters, number from ${{ inputs.startNumber }} to $(( ${{inputs.startNumber }} + ${{ inputs.range }} ))"
+#name: try input
+#on:
+#  workflow_dispatch:
+#    inputs:
+#      startNumber:
+#        description: 'startNumber'
+#        required: true
+#        type: string
+#        default: '0'
+#      range:
+#        description: 'startNumber'
+#        required: true
+#        type: string
+#        default: '0'
+#jobs:
+#  Explore-GitHub-Actions:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name : print
+#        run: |
+#          printf "\n\n Input parameters, number from ${{ inputs.startNumber }} to $(( ${{inputs.startNumber }} + ${{ inputs.range }} ))"
