@@ -24,6 +24,6 @@ jobs:
     steps:
       - name: Report Colors
         run: |
-          printf "\n\n Matrix parameters: ${{ matrix.colors }}"
+          printf "\n\n Matrix parameters: ${{ matrix.color }}"
 
 
