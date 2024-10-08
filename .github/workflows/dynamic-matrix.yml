@@ -9,6 +9,7 @@ jobs:
       colors: ${{ steps.colors.outputs.colors }}
 
     steps:
+      - uses: actions/checkout@v4
       - name: Define Colors
         id: colors
         run: |
