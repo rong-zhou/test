@@ -2,25 +2,27 @@ name: dynamic-matrix
 on:
   workflow_dispatch:
 jobs:
-  define-matrix:
+  generate_colors:
     runs-on: ubuntu-latest
 
     outputs:
       colors: ${{ steps.colors.outputs.colors }}
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Define Colors
         id: colors
         run: |
-          script/generate_color.sh
+          ./generate_colors.sh
 
-  produce-atrifacts:
+  use_colors:
     runs-on: ubuntu-latest
     needs: define-matrix
     strategy:
       matrix:
-        color: ${{ fromJSON(needs.define-matrix.outputs.colors) }}
+        color: [${{ fromJSON(needs.generate_colors.outputs.colors) }}]
 
     steps:
       - name: Report Colors
