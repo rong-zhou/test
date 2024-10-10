@@ -25,6 +25,6 @@ jobs:
       matrix: ${{ fromJSON(needs.generate-colors.outputs.matrix) }}
 
     steps:
-      - name: Report Colors
+      - name: ${{ matrix.colors }}
         run: |
           printf "\n\n Matrix parameters: ${{ matrix.colors }}"
